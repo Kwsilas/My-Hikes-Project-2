@@ -5,7 +5,7 @@ class TrailsController < ApplicationController
   # GET /trails
   # GET /trails.json
   def index
-    @trails = current_user.trails.order(created_at: :desc)
+    @trails = current_user.trails
   end
 
   # GET /trails/1
