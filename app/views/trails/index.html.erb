@@ -3,7 +3,7 @@
     <span class="glyphicon glyphicon-plus"></span>
     New Trail
   <% end %>
-  <h1>Listing trails</h1>
+  <h1>Here are your trails</h1>
 </div>
 
 <div class="table-responsive">
@@ -24,14 +24,13 @@
             <td><%= trail.name %></td>
             <td><%= trail.campsite %></td>
             <td>
-              <%= link_to("/trails/#{trail.id}/toggle_has_water") do %>
-               <% if trail.has_water %>
+               <% if trail.water_source == true %>
                  <span class="glyphicon glyphicon-ok"></span>
                <% else %>
                 <span class="glyphicon glyphicon-unchecked"></span>
                <% end %>
-              <% end %>
-           </td>
+            </td>
+
             <td><%= link_to 'Show', trail %></td>
         <td><%= link_to 'Edit', edit_trail_path(trail) %></td>
         <td><%= link_to 'Destroy', trail, method: :delete, data: { confirm: 'Are you sure?' } %></td>

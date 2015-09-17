@@ -18,9 +18,12 @@
   <dd><%= @trail.campsite %></dd>
 
   <dt>Water source:</dt>
-  <dd><%= @trail.water_source %></dd>
-
-  <dt>Created</dt>
-  <dd><%= @trails.created_at %></dd>
+  <dd>
+         <% if @trail.water_source == true %>
+           <span class="glyphicon glyphicon-ok"></span>
+         <% else %>
+          <span class="glyphicon glyphicon-unchecked"></span>
+         <% end %>
+  </dd>
 
 </dl>

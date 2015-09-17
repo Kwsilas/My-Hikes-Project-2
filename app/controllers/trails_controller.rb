@@ -1,20 +1,21 @@
 class TrailsController < ApplicationController
   before_action :set_trail, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user
 
-  def toggle_has_water
-    @trail.has_water = !@trail.has_water
-    respond_to do |format|
-      if @trail.save
-        format.html { redirect_to trails_path }
-        format.json {render :show, status: :ok, location: @trail }
-      end
-    end
-  end
+  # def toggle_has_water
+  #   @trail.completed = !@trail.completed
+  #   respond_to do |format|
+  #     if @trail.save
+  #       format.html { redirect_to trails_path }
+  #       format.json {render :show, status: :ok, location: @trail }
+  #     end
+  #   end
+  # end
 
   # GET /trails
   # GET /trails.json
   def index
-    @trails = Trail.order(created_at: :desc)
+    @trails = current_user.trails.order(created_at: :desc)
   end
 
   # GET /trails/1
@@ -35,6 +36,7 @@ class TrailsController < ApplicationController
   # POST /trails.json
   def create
     @trail = Trail.new(trail_params)
+    @trail.user = current_user
 
     respond_to do |format|
       if @trail.save
