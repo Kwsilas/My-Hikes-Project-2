@@ -2,16 +2,6 @@ class TrailsController < ApplicationController
   before_action :set_trail, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user
 
-  # def toggle_has_water
-  #   @trail.completed = !@trail.completed
-  #   respond_to do |format|
-  #     if @trail.save
-  #       format.html { redirect_to trails_path }
-  #       format.json {render :show, status: :ok, location: @trail }
-  #     end
-  #   end
-  # end
-
   # GET /trails
   # GET /trails.json
   def index
