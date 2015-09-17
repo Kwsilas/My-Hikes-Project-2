@@ -1,4 +1,3 @@
-// "bootstrap-sprockets" must be imported before "bootstrap" for the icon fonts to work.
 @import "bootstrap-variables.scss";
 @import "bootstrap-custom-variables.scss";
 @import "bootstrap-sprockets.scss";
@@ -6,6 +5,10 @@
 
 body {
   padding-top: $navbar-height + 10px;
+}
+
+.jumbotron {
+  opacity: .80;
 }
 
 .page-header {
