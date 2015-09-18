@@ -14,7 +14,7 @@ The objective of this project is to:
 
 User storyboard: [Trello](https://trello.com/b/ow5oD2EA/myhikes-project-2)
 Deploy app with: [Heroku](https://my-hikes.herokuapp.com/)
-GitHub [My hikes]()
+GitHub [My hikes](https://github.com/Kwsilas/My-Hikes-Project-2)
 
 ##TECHNOLOGY USED
 
@@ -27,6 +27,6 @@ GitHub [My hikes]()
 
 ##MOCK-UPS
 
-![Mockup]()
+![Mockup](https://github.com/Kwsilas/My-Hikes-Project-2/blob/master/app/assets/images/Project2.JPG)
 
 
