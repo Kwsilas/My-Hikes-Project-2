@@ -1,6 +1,9 @@
 class TrailsController < ApplicationController
-  before_action :set_trail, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user
+  before_action :set_trail, only: [:show, :edit, :update, :destroy]
+  before_action :verify_correct_user, only: [:edit, :update, :destroy]
+
+
 
   # GET /trails
   # GET /trails.json
@@ -72,5 +75,9 @@ class TrailsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def trail_params
       params.require(:trail).permit(:name, :campsite, :water_source)
+    end
+
+    def verify_correct_user
+       redirect_to root_url, notice: 'Access Denied!' unless @trail.user_id === @current_user.id
     end
 end

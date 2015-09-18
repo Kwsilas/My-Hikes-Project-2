@@ -3,7 +3,7 @@
     <span class="glyphicon glyphicon-plus"></span>
     New Trail
   <% end %>
-  <h1>Here are your trails</h1>
+  <h1>My Hikes community trails</h1>
 </div>
 
 <div class="table-responsive">
@@ -14,13 +14,11 @@
           <th>Miles to Campsite</th>
           <th>Water source available?</th>
           <th>Show</th>
-          <th>Edit</th>
-          <th>Delete</th>
       </tr>
     </thead>
 
     <tbody>
-      <%= content_tag_for(:tr, @trails) do |trail| %>
+      <%= content_tag_for(:tr, Trail.all) do |trail| %>
             <td><%= trail.name %></td>
             <td><%= trail.campsite %></td>
             <td>
@@ -32,9 +30,8 @@
             </td>
 
             <td><%= link_to 'Show', trail %></td>
-        <td><%= link_to 'Edit', edit_trail_path(trail) %></td>
-        <td><%= link_to 'Destroy', trail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tbody>
   </table>
 </div>
+

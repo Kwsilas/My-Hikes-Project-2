@@ -7,17 +7,17 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show trail</h1>
+  <h1>Trail Info:</h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt>Name:</dt>
   <dd><%= @trail.name %></dd>
 
-  <dt>Campsite:</dt>
+  <dt>Miles to Campsite:</dt>
   <dd><%= @trail.campsite %></dd>
 
-  <dt>Water source:</dt>
+  <dt>Water source?:</dt>
   <dd>
          <% if @trail.water_source == true %>
            <span class="glyphicon glyphicon-ok"></span>
