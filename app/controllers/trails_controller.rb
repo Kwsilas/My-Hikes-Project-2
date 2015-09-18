@@ -14,6 +14,8 @@ class TrailsController < ApplicationController
   # GET /trails/1
   # GET /trails/1.json
   def show
+    @picture = Trail.show_picture
+
   end
 
   # GET /trails/new
