@@ -1,6 +1,5 @@
 <div class="jumbotron">
   <div class="page-header">
-
     <%= link_to @user, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-info-sign"></span>
       Show
@@ -9,4 +8,5 @@
   </div>
 
   <%= render 'form' %>
+  <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
